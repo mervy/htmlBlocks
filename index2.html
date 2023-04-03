@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        background-color: rgba(99, 37, 37, 0.404);
+        width: 100%;
+      }
+
+      .hero-img {
+        width: 50%;
+        height: auto;
+        margin: 50px auto;
+      }
+
+      .hero-text {
+        width: 30%;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .hero-text p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+
+      .hero-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+      }
+
+      .hero-image {
+        width: 45%;
+        margin-bottom: 10px;
+      }
+
+      .hero-small-img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .hero-image h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .hero-image p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Título principal</h1>
+    </header>
+    <div class="hero">
+      <img src="https://picsum.photos/800/600" alt="Imagem principal" class="hero-img">
+      <div class="hero-text">
+        <h1>Título principal aqui</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut euismod mauris. Donec aliquam libero quis
+          nunc ultrices, sed pellentesque tellus mollis. Integer in magna sit amet massa pharetra viverra eget at
+          turpis. Fusce non lobortis eros, a fringilla nisl. Nam euismod tortor vel ex scelerisque, ut gravida arcu
+          commodo. Duis ut sem vitae elit pulvinar ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Integer congue fringilla lorem id feugiat. Mauris vel molestie mi.</p>
+        <div class="hero-images">
+          <div class="hero-image">
+            <img src="https://picsum.photos/200/200" alt="Imagem 1" class="hero-small-img">
+            <h3>Imagem 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://picsum.photos/200/200" alt="Imagem 2" class="hero-small-img">
+            <h3>Imagem 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://picsum.photos/200/200" alt="Imagem 3" class="hero-small-img">
+            <h3>Imagem 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="hero-image">
+            <img src="https://picsum.photos/200/200" alt="Imagem 4" class="hero-small-img">
+            <h3>Imagem 4</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
