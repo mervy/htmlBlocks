@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo de Cards com JSON e JavaScript</title>
+    <style>
+      /* Estilos gerais */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      /* Estilos dos cards */
+      .card {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        max-width: 300px;
+        overflow: hidden;
+      }
+      .card h2 {
+        background-color: #4caf50;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+      }
+      .card p {
+        padding: 10px;
+        text-align: justify;
+      }
+      /* Estilos do container dos cards */
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        margin: 20px auto;
+        max-width: 960px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo de Cards com JSON e JavaScript</h1>
+    <div class="card-container"></div>
+    <script>
+      // Lê o arquivo JSON
+      fetch("codes.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Cria um card para cada objeto no JSON
+          const cardContainer = document.querySelector(".card-container");
+          data.forEach((obj) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            const title = document.createElement("h2");
+            title.textContent = obj.title;
+            const code = document.createElement("p");
+            code.textContent = obj.code;
+            card.appendChild(title);
+            card.appendChild(code);
+            cardContainer.appendChild(card);
+          });
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>

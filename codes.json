@@ -1,0 +1,518 @@
+[
+  {
+    "id": 1,
+    "title": "Exemplo de Classe em PHP 8.2",
+    "code": "<?php\n\nclass Pessoa {\n  private string $nome;\n  private int $idade;\n\n  public function __construct(string $nome, int $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n\n  public function apresentar(): string {\n    return \"Olá, meu nome é {$this->nome} e eu tenho {$this->idade} anos.\";\n  }\n}\n\n$pessoa = new Pessoa(\"João\", 30);\necho $pessoa->apresentar();\n?>"
+  },
+  {
+    "id": 2,
+    "title": "Exemplo de Namespace em PHP 8.2",
+    "code": "<?php\n\nnamespace App\\Controllers;\n\nclass HomeController {\n  public function index() {\n    echo \"Hello World!\";\n  }\n}\n\n$homeController = new HomeController();\n$homeController->index();\n?>"
+  },
+  {
+    "id": 3,
+    "title": "Exemplo de Traits em PHP 8.2",
+    "code": "<?php\n\ntrait Log {\n  public function log(string $mensagem): void {\n    echo date(\"Y-m-d H:i:s\") . \" - {$mensagem}\\n\";\n  }\n}\n\nclass Usuario {\n  use Log;\n\n  private string $nome;\n\n  public function __construct(string $nome) {\n    $this->nome = $nome;\n  }\n\n  public function saudacao(): void {\n    $this->log(\"Olá, meu nome é {$this->nome}\");\n  }\n}\n\n$usuario = new Usuario(\"Maria\");\n$usuario->saudacao();\n?>"
+  },
+  {
+    "id": 4,
+    "title": "Exemplo 1",
+    "code": "<?php\n$nome = 'João';\necho 'Olá, ' . $nome;"
+  },
+  {
+    "id": 5,
+    "title": "Exemplo 2",
+    "code": "<?php\n$preco = 19.99;\necho 'O preço é R$ ' . number_format($preco, 2, ',', '.');"
+  },
+  {
+    "id": 6,
+    "title": "Exemplo 3",
+    "code": "<?php\nfunction somar($a, $b) {\n  return $a + $b;\n}\n$resultado = somar(2, 3);\necho 'A soma é ' . $resultado;"
+  },
+  {
+    "id": 7,
+    "title": "Exemplo 4",
+    "code": "<?php\n$alunos = [\n  'João' => 8,\n  'Maria' => 9,\n  'Pedro' => 7\n];\nforeach ($alunos as $nome => $nota) {\n  echo $nome . ': ' . $nota . '\\n';\n}"
+  },
+  {
+    "id": 8,
+    "title": "Exemplo 5",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\narray_push($numeros, 13);\nforeach ($numeros as $numero) {\n  echo $numero . '\\n';\n}"
+  },
+  {
+    "id": 9,
+    "title": "Exemplo 1",
+    "code": "<?php\n$nome = 'João';\necho 'Olá, ' . $nome;"
+  },
+  {
+    "id": 10,
+    "title": "Exemplo 2",
+    "code": "<?php\n$preco = 19.99;\necho 'O preço é R$ ' . number_format($preco, 2, ',', '.');"
+  },
+  {
+    "id": 11,
+    "title": "Exemplo 3",
+    "code": "<?php\nfunction somar($a, $b) {\n  return $a + $b;\n}\n$resultado = somar(2, 3);\necho 'A soma é ' . $resultado;"
+  },
+  {
+    "id": 12,
+    "title": "Exemplo 4",
+    "code": "<?php\n$alunos = [\n  'João' => 8,\n  'Maria' => 9,\n  'Pedro' => 7\n];\nforeach ($alunos as $nome => $nota) {\n  echo $nome . ': ' . $nota . '\\n';\n}"
+  },
+  {
+    "id": 13,
+    "title": "Exemplo 5",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\narray_push($numeros, 13);\nforeach ($numeros as $numero) {\n  echo $numero . '\\n';\n}"
+  },
+  {
+    "id": 14,
+    "title": "Exemplo 6",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n$pessoa = new Pessoa('João', 30);\necho 'Nome: ' . $pessoa->getNome() . '\\n';\necho 'Idade: ' . $pessoa->getIdade();"
+  },
+  {
+    "id": 15,
+    "title": "Exemplo 7",
+    "code": "<?php\n$frutas = [\n  'maçã',\n  'banana',\n  'laranja',\n  'abacaxi',\n  'uva'\n];\n$resultado = match ('banana') {\n  in_array('maçã', $frutas) => 'Tem maçã',\n  in_array('banana', $frutas) => 'Tem banana',\n  in_array('abacate', $frutas) => 'Tem abacate',\n  default => 'Não tem nada'\n};\necho $resultado;"
+  },
+  {
+    "id": 16,
+    "title": "Exemplo 8",
+    "code": "<?php\n$nome = 'Maria';\necho 'Olá, ' . strtoupper($nome);"
+  },
+  {
+    "id": 17,
+    "title": "Exemplo 1",
+    "code": "<?php\n$nome = 'João';\necho 'Olá, ' . $nome;"
+  },
+  {
+    "id": 18,
+    "title": "Exemplo 2",
+    "code": "<?php\n$preco = 19.99;\necho 'O preço é R$ ' . number_format($preco, 2, ',', '.');"
+  },
+  {
+    "id": 19,
+    "title": "Exemplo 3",
+    "code": "<?php\nfunction somar($a, $b) {\n  return $a + $b;\n}\n$resultado = somar(2, 3);\necho 'A soma é ' . $resultado;"
+  },
+  {
+    "id": 20,
+    "title": "Exemplo 4",
+    "code": "<?php\n$alunos = [\n  'João' => 8,\n  'Maria' => 9,\n  'Pedro' => 7\n];\nforeach ($alunos as $nome => $nota) {\n  echo $nome . ': ' . $nota . '\\n';\n}"
+  },
+  {
+    "id": 21,
+    "title": "Exemplo 5",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\narray_push($numeros, 13);\nforeach ($numeros as $numero) {\n  echo $numero . '\\n';\n}"
+  },
+  {
+    "id": 22,
+    "title": "Exemplo 6",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n$pessoa = new Pessoa('João', 30);\necho 'Nome: ' . $pessoa->getNome() . '\\n';\necho 'Idade: ' . $pessoa->getIdade();"
+  },
+  {
+    "id": 23,
+    "title": "Exemplo 7",
+    "code": "<?php\n$frutas = [\n  'maçã',\n  'banana',\n  'laranja',\n  'abacaxi',\n  'uva'\n];\n$resultado = match ('banana') {\n  in_array('maçã', $frutas) => 'Tem maçã',\n  in_array('banana', $frutas) => 'Tem banana',\n  in_array('abacate', $frutas) => 'Tem abacate',\n  default => 'Não tem nada'\n};\necho $resultado;"
+  },
+  {
+    "id": 24,
+    "title": "Exemplo 8",
+    "code": "<?php\n$nome = 'Maria';\necho 'Olá, ' . strtoupper($nome);"
+  }
+[
+  {
+    "id": 25,
+    "title": "Exemplo 1",
+    "code": "<?php\n$nome = 'João';\necho 'Olá, ' . $nome;"
+  },
+  {
+    "id": 26,
+    "title": "Exemplo 2",
+    "code": "<?php\n$preco = 19.99;\necho 'O preço é R$ ' . number_format($preco, 2, ',', '.');"
+  },
+  {
+    "id": 27,
+    "title": "Exemplo 3",
+    "code": "<?php\nfunction somar($a, $b) {\n  return $a + $b;\n}\n$resultado = somar(2, 3);\necho 'A soma é ' . $resultado;"
+  },
+  {
+    "id": 28,
+    "title": "Exemplo 4",
+    "code": "<?php\n$alunos = [\n  'João' => 8,\n  'Maria' => 9,\n  'Pedro' => 7\n];\nforeach ($alunos as $nome => $nota) {\n  echo $nome . ': ' . $nota . '\\n';\n}"
+  },
+  {
+    "id": 29,
+    "title": "Exemplo 5",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\narray_push($numeros, 13);\nforeach ($numeros as $numero) {\n  echo $numero . '\\n';\n}"
+  },
+  {
+    "id": 30,
+    "title": "Exemplo 6",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n$pessoa = new Pessoa('João', 30);\necho 'Nome: ' . $pessoa->getNome() . '\\n';\necho 'Idade: ' . $pessoa->getIdade();"
+  },
+  {
+    "id": 31,
+    "title": "Exemplo 7",
+    "code": "<?php\n$frutas = [\n  'maçã',\n  'banana',\n  'laranja',\n  'abacaxi',\n  'uva'\n];\n$resultado = match ('banana') {\n  in_array('maçã', $frutas) => 'Tem maçã',\n  in_array('banana', $frutas) => 'Tem banana',\n  in_array('abacate', $frutas) => 'Tem abacate',\n  default => 'Não tem nada'\n};\necho $resultado;"
+  },
+  {
+    "id": 32,
+    "title": "Exemplo 8",
+    "code": "<?php\n$nome = 'Maria';\necho 'Olá, ' . strtoupper($nome);"
+  },
+  {
+    "id": 33,
+    "title": "Exemplo 9",
+    "code":
+  },
+  {
+    "id": 34,
+    "title": "Exemplo 1",
+    "code": "<?php\n$nome = 'João';\necho 'Olá, ' . $nome;"
+  },
+  {
+    "id": 35,
+    "title": "Exemplo 2",
+    "code": "<?php\n$preco = 19.99;\necho 'O preço é R$ ' . number_format($preco, 2, ',', '.');"
+  },
+  {
+    "id": 36,
+    "title": "Exemplo 3",
+    "code": "<?php\nfunction somar($a, $b) {\n  return $a + $b;\n}\n$resultado = somar(2, 3);\necho 'A soma é ' . $resultado;"
+  },
+  {
+    "id": 37,
+    "title": "Exemplo 4",
+    "code": "<?php\n$alunos = [\n  'João' => 8,\n  'Maria' => 9,\n  'Pedro' => 7\n];\nforeach ($alunos as $nome => $nota) {\n  echo $nome . ': ' . $nota . '\\n';\n}"
+  },
+  {
+    "id": 38,
+    "title": "Exemplo 5",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\narray_push($numeros, 13);\nforeach ($numeros as $numero) {\n  echo $numero . '\\n';\n}"
+  },
+  {
+    "id": 39,
+    "title": "Exemplo 6",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n"
+	},
+  {
+    "id": 40,
+    "title": "Exemplo 21",
+    "code": "<?php\nfunction contarVogais($texto) {\n  $vogais = ['a', 'e', 'i', 'o', 'u'];\n  $contador = 0;\n  for ($i = 0; $i < strlen($texto); $i++) {\n    if (in_array(strtolower($texto[$i]), $vogais)) {\n      $contador++;\n    }\n  }\n  return $contador;\n}\necho contarVogais('Lorem ipsum dolor sit amet');"
+  },
+  {
+    "id": 41,
+    "title": "Exemplo 22",
+    "code": "<?php\nclass Animal {\n  protected $nome;\n  protected $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function andar() {\n    echo $this->nome . ' andou.';\n  }\n}\n\nclass Cachorro extends Animal {\n  public function latir() {\n    echo $this->nome . ' latiu.';\n  }\n}\n\n$rex = new Cachorro('Rex', 2);\n$rex->andar();\n$rex->latir();"
+  },
+  {
+    "id": 42,
+    "title": "Exemplo 23",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\n$numerosAoQuadrado = array_map(function($numero) {\n  return $numero ** 2;\n}, $numeros);\nprint_r($numerosAoQuadrado);"
+  },
+  {
+    "id": 43,
+    "title": "Exemplo 24",
+    "code": "<?php\nfunction fatorial($numero) {\n  if ($numero == 0) {\n    return 1;\n  } else {\n    return $numero * fatorial($numero - 1);\n  }\n}\necho fatorial(5);"
+  },
+  {
+    "id": 44,
+    "title": "Exemplo 25",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\n$numerosPares = array_filter($numeros, function($numero) {\n  return $numero % 2 == 0;\n});\nprint_r($numerosPares);"
+  },
+  {
+    "id": 45,
+    "title": "Exemplo 26",
+    "code": "<?php\ninterface Pagavel {\n  public function pagar($valor);\n}\n\nclass Produto implements Pagavel {\n  private $nome;\n  private $preco;\n  public function __construct($nome, $preco) {\n    $this->nome = $nome;\n    $this->preco = $preco;\n  }\n  public function pagar($valor) {\n    if ($valor >= $this->preco) {\n      echo 'Produto ' . $this->nome . ' pago.';\n    } else {\n      echo 'Valor insuficiente para o produto ' . $this->nome;\n    }\n  }\n}\n\n"
+  },
+  {
+    "id": 46,
+    "title": "Exemplo 31",
+    "code": "<?php\n$frase = 'Lorem ipsum dolor sit amet';\n$palavras = explode(' ', $frase);\nprint_r($palavras);"
+  },
+  {
+    "id": 47,
+    "title": "Exemplo 32",
+    "code": "<?php\nabstract class Animal {\n  protected $nome;\n  protected $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  abstract public function andar();\n}\n\nclass Cachorro extends Animal {\n  public function andar() {\n    echo $this->nome . ' andou.';\n  }\n}\n\nclass Gato extends Animal {\n  public function andar() {\n    echo $this->nome . ' andou silenciosamente.';\n  }\n}\n\n$rex = new Cachorro('Rex', 2);\n$rex->andar();\n$mimi = new Gato('Mimi', 1);\n$mimi->andar();"
+  },
+  {
+    "id": 48,
+    "title": "Exemplo 33",
+    "code": "<?php\n$numeros = [2, 3, 5, 7, 11];\n$numerosSoma = array_reduce($numeros, function($acumulado, $numero) {\n  return $acumulado + $numero;\n});\necho $numerosSoma;"
+  },
+  {
+    "id": 49,
+    "title": "Exemplo 34",
+    "code": "<?php\nfunction inverteTexto($texto) {\n  $textoInvertido = '';\n  for ($i = strlen($texto) - 1; $i >= 0; $i--) {\n    $textoInvertido .= $texto[$i];\n  }\n  return $textoInvertido;\n}\necho inverteTexto('Lorem ipsum');"
+  },
+  {
+    "id": 50,
+    "title": "Exemplo 35",
+    "code": "<?php\nclass Produto {\n  private $nome;\n  private $preco;\n  public function __construct($nome, $preco) {\n    $this->nome = $nome;\n    $this->preco = $preco;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function setNome($nome) {\n    $this->nome = $nome;\n  }\n  public function getPreco() {\n    return $this->preco;\n  }\n  public function setPreco($preco) {\n    $this->preco = $preco;\n  }\n}\n\nclass Carrinho {\n  private $produtos = [];\n  public function adicionarProduto(Produto $produto) {\n    $this->produtos[] = $produto;\n  }\n  public function calcularTotal() {\n    $total = 0;\n    foreach ($this->produtos as $produto) {\n      $total += $produto->getPreco();\n    }\n    return $total;\n  }\n}\n\n$produto1 = new Produto('Camisa"
+  },
+  {
+    "id": 51,
+    "title": "Exemplo 35",
+    "code": "<?php\nclass Produto {\n  private $nome;\n  private $preco;\n  public function __construct($nome, $preco) {\n    $this->nome = $nome;\n    $this->preco = $preco;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function setNome($nome) {\n    $this->nome = $nome;\n  }\n  public function getPreco() {\n    return $this->preco;\n  }\n  public function setPreco($preco) {\n    $this->preco = $preco;\n  }\n}\n\nclass Carrinho {\n  private $produtos = [];\n  public function adicionarProduto(Produto $produto) {\n    $this->produtos[] = $produto;\n  }\n  public function calcularTotal() {\n    $total = 0;\n    foreach ($this->produtos as $produto) {\n      $total += $produto->getPreco();\n    }\n    return $total;\n  }\n}\n\n$produto1 = new Produto('Camisa', 50);\n$produto2 = new Produto('Calça', 80);\n$carrinho = new Carrinho();\n$carrinho->adicionarProduto($produto1);\n$carrinho->adicionarProduto($produto2);\necho $carrinho->calcularTotal();"
+  },
+  {
+    "id": 52,
+    "title": "Exemplo 36",
+    "code": "<?php\n$array1 = ['a', 'b', 'c'];\n$array2 = [1, 2, 3];\n$arrayFinal = array_combine($array1, $array2);\nprint_r($arrayFinal);"
+  },
+  {
+    "id": 53,
+    "title": "Exemplo 37",
+    "code": "<?php\nfunction calculaAreaRetangulo($base, $altura) {\n  return $base * $altura;\n}\necho calculaAreaRetangulo(10, 5);"
+  },
+  {
+    "id": 54,
+    "title": "Exemplo 38",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n\n$pessoa = new Pessoa('João', 25);\necho 'O nome da pessoa é ' . $pessoa->getNome() . ' e a idade é ' . $pessoa->getIdade() . '.';"
+  },
+  {
+    "id": 55,
+    "title": "Exemplo 39",
+    "code": "<?php\nfunction ordenaArray($array) {\n  sort($array);\n  return $array;\n}\n\n$arrayDesordenado = [4, 2, 5, 1, 3];\n$arrayOrdenado = ordenaArray($arrayDesordenado);\nprint_r($arrayOrdenado);"
+  },
+  {
+    "id": 56,
+    "title": "Exemplo 35",
+    "code": "<?php\nclass Produto {\n  private $nome;\n  private $preco;\n  public function __construct($nome, $preco) {\n    $this->nome = $nome;\n    $this->preco = $preco;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function setNome($nome) {\n    $this->nome = $nome;\n  }\n  public function getPreco() {\n    return $this->preco;\n  }\n  public function setPreco($preco) {\n    $this->preco = $preco;\n  }\n}\n\nclass Carrinho {\n  private $produtos = [];\n  public function adicionarProduto(Produto $produto) {\n    $this->produtos[] = $produto;\n  }\n  public function calcularTotal() {\n    $total = 0;\n    foreach ($this->produtos as $produto) {\n      $total += $produto->getPreco();\n    }\n    return $total;\n  }\n}\n\n$produto1 = new Produto('Camisa', 50);\n$produto2 = new Produto('Calça', 80);\n$carrinho = new Carrinho();\n$carrinho->adicionarProduto($produto1);\n$carrinho->adicionarProduto($produto2);\necho $carrinho->calcularTotal();"
+  },
+  {
+    "id": 57,
+    "title": "Exemplo 36",
+    "code": "<?php\n$array1 = ['a', 'b', 'c'];\n$array2 = [1, 2, 3];\n$arrayFinal = array_combine($array1, $array2);\nprint_r($arrayFinal);"
+  },
+  {
+    "id": 58,
+    "title": "Exemplo 37",
+    "code": "<?php\nfunction calculaAreaRetangulo($base, $altura) {\n  return $base * $altura;\n}\necho calculaAreaRetangulo(10, 5);"
+  },
+  {
+    "id": 59,
+    "title": "Exemplo 38",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n\n$pessoa = new Pessoa('João', 25);\necho 'O nome da pessoa é ' . $pessoa->getNome() . ' e a idade é ' . $pessoa->getIdade() . '.';"
+  },
+  {
+    "id": 60,
+    "title": "Exemplo 39",
+    "code": "<?php\nfunction ordenaArray($array) {\n  sort($array);\n  return $array;\n}\n\n$arrayDesordenado = [4, 2, 5, 1, 3];\n$arrayOrdenado = ordenaArray($arrayDesordenado);\nprint_r($arrayOrdenado);"
+  },
+  {
+    "id": 61,
+    "title": "Exemplo 55",
+    "code": "<?php\ninterface Frete {\n  public function calcularFrete();\n}\n\nclass FreteSedex implements Frete {\n  public function calcularFrete() {\n    return 10.0;\n  }\n}\n\nclass FretePac implements Frete {\n  public function calcularFrete() {\n    return 5.0;\n  }\n}\n\nclass Pedido {\n  private $valorTotal;\n  private $frete;\n  public function __construct($valorTotal, Frete $frete) {\n    $this->valorTotal = $valorTotal;\n    $this->frete = $frete;\n  }\n  public function calcularTotal() {\n    return $this->valorTotal + $this->frete->calcularFrete();\n  }\n}\n\n$frete = new FretePac();\n$pedido = new Pedido(100, $frete);\necho $pedido->calcularTotal();"
+  },
+  {
+    "id": 62,
+    "title": "Exemplo 56",
+    "code": "<?php\nfunction invertePalavras($frase) {\n  $palavras = explode(' ', $frase);\n  $palavrasInvertidas = [];\n  foreach ($palavras as $palavra) {\n    $palavraInvertida = strrev($palavra);\n    $palavrasInvertidas[] = $palavraInvertida;\n  }\n  $fraseInvertida = implode(' ', $palavrasInvertidas);\n  return $fraseInvertida;\n}\necho invertePalavras('O rato roeu a roupa do rei de Roma.');"
+  },
+  {
+    "id": 63,
+    "title": "Exemplo 57",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n\nclass PessoaFisica extends Pessoa {\n  private $cpf;\n  public function __construct($nome, $idade, $cpf) {\n    parent::__construct($nome, $idade);\n    $this->cpf = $cpf;\n  }\n  public function getCpf() {\n    return $this->cpf;\n  }\n}\n\n$pessoaFisica = new PessoaFisica('João', 25, '123.456.789-10');\necho 'O nome da pessoa é ' . $pessoaFisica->getNome() . ', a idade é ' . $pessoaFisica->getIdade() . ' e o CPF é ' . $pessoaFisica->getCpf() . '.';"
+  },
+  {
+    "id": 64,
+    "title": "Exemplo 58",
+    "code": "<?php\nfunction contaPalavras($texto) {\n  $palavras = str_word_count($texto);\n  return $palavras;\n}\n\necho contaPalavras('O rato roeu a"
+  },
+  {
+    "id": 65,
+    "title": "Exemplo 55",
+    "code": "<?php\ninterface Frete {\n  public function calcularFrete();\n}\n\nclass FreteSedex implements Frete {\n  public function calcularFrete() {\n    return 10.0;\n  }\n}\n\nclass FretePac implements Frete {\n  public function calcularFrete() {\n    return 5.0;\n  }\n}\n\nclass Pedido {\n  private $valorTotal;\n  private $frete;\n  public function __construct($valorTotal, Frete $frete) {\n    $this->valorTotal = $valorTotal;\n    $this->frete = $frete;\n  }\n  public function calcularTotal() {\n    return $this->valorTotal + $this->frete->calcularFrete();\n  }\n}\n\n$frete = new FretePac();\n$pedido = new Pedido(100, $frete);\necho $pedido->calcularTotal();"
+  },
+  {
+    "id": 66,
+    "title": "Exemplo 56",
+    "code": "<?php\nfunction invertePalavras($frase) {\n  $palavras = explode(' ', $frase);\n  $palavrasInvertidas = [];\n  foreach ($palavras as $palavra) {\n    $palavraInvertida = strrev($palavra);\n    $palavrasInvertidas[] = $palavraInvertida;\n  }\n  $fraseInvertida = implode(' ', $palavrasInvertidas);\n  return $fraseInvertida;\n}\necho invertePalavras('O rato roeu a roupa do rei de Roma.');"
+  },
+  {
+    "id": 67,
+    "title": "Exemplo 57",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n\nclass PessoaFisica extends Pessoa {\n  private $cpf;\n  public function __construct($nome, $idade, $cpf) {\n    parent::__construct($nome, $idade);\n    $this->cpf = $cpf;\n  }\n  public function getCpf() {\n    return $this->cpf;\n  }\n}\n\n$pessoaFisica = new PessoaFisica('João', 25, '123.456.789-10');\necho 'O nome da pessoa é ' . $pessoaFisica->getNome() . ', a idade é ' . $pessoaFisica->getIdade() . ' e o CPF é ' . $pessoaFisica->getCpf() . '.';"
+  },
+  {
+    "id": 68,
+    "title": "Exemplo 58",
+    "code": "<?php\nfunction contaPalavras($texto) {\n  $palavras = str_word_count($texto);\n  return $palavras;\n}\n\necho contaPalavras('O rato roeu a"
+
+[
+  {
+    "id": 69,
+    "title": "Exemplo 100",
+    "code": "<?php\ninterface Produto {\n  public function getPreco();\n}\n\nclass Camisa implements Produto {\n  private $preco;\n  public function __construct($preco) {\n    $this->preco = $preco;\n  }\n  public function getPreco() {\n    return $this->preco;\n  }\n}\n\nclass Calca implements Produto {\n  private $preco;\n  public function __construct($preco) {\n    $this->preco = $preco;\n  }\n  public function getPreco() {\n    return $this->preco;\n  }\n}\n\nclass Carrinho {\n  private $produtos = [];\n  public function adicionarProduto(Produto $produto) {\n    $this->produtos[] = $produto;\n  }\n  public function calcularTotal() {\n    $total = 0.0;\n    foreach ($this->produtos as $produto) {\n      $total += $produto->getPreco();\n    }\n    return $total;\n  }\n}\n\n$camisa = new Camisa(29.99);\n$calca = new Calca(59.99);\n$carrinho = new Carrinho();\n$carrinho->adicionarProduto($camisa);\n$carrinho->adicionarProduto($calca);\necho $carrinho->calcularTotal();"
+  },
+  {
+    "id": 70,
+    "title": "Exemplo 101",
+    "code": "<?php\nfunction contarLetras($texto, $letra) {\n  $letras = str_split($texto);\n  $contagem = 0;\n  foreach ($letras as $l) {\n    if ($l == $letra) {\n      $contagem++;\n    }\n  }\n  return $contagem;\n}\n\necho contarLetras('O rato roeu a roupa do rei de Roma.', 'r');"
+  },
+  {
+    "id": 71,
+    "title": "Exemplo 102",
+    "code": "<?php\nabstract class Pessoa {\n  protected $nome;\n  protected $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  abstract public function getDocumento();\n}\n\nclass PessoaFisica extends Pessoa {\n  private $cpf;\n  public function __construct($nome, $idade, $cpf) {\n    parent::__construct($nome, $idade);\n    $this->cpf = $cpf;\n  }\n  public function getDocumento() {\n    return $this->cpf;\n  }\n}\n\nclass PessoaJuridica extends Pessoa {\n  private $cnpj;\n  public function __construct($nome, $idade, $cnpj) {\n    parent::__construct($nome, $idade);\n    $this->cnpj = $cnpj;\n  }\n  public function getDocumento() {\n    return $this->cnpj;\n  }\n}\n\n$pessoaFisica = new PessoaFisica('João', 25, '123.456.789-10');\necho 'O nome da"
+
+[
+  {
+    "id": 72,
+    "title": "Exemplo 55",
+    "code": "<?php\ninterface Frete {\n  public function calcularFrete();\n}\n\nclass FreteSedex implements Frete {\n  public function calcularFrete() {\n    return 10.0;\n  }\n}\n\nclass FretePac implements Frete {\n  public function calcularFrete() {\n    return 5.0;\n  }\n}\n\nclass Pedido {\n  private $valorTotal;\n  private $frete;\n  public function __construct($valorTotal, Frete $frete) {\n    $this->valorTotal = $valorTotal;\n    $this->frete = $frete;\n  }\n  public function calcularTotal() {\n    return $this->valorTotal + $this->frete->calcularFrete();\n  }\n}\n\n$frete = new FretePac();\n$pedido = new Pedido(100, $frete);\necho $pedido->calcularTotal();"
+  },
+  {
+    "id": 73,
+    "title": "Exemplo 56",
+    "code": "<?php\nfunction invertePalavras($frase) {\n  $palavras = explode(' ', $frase);\n  $palavrasInvertidas = [];\n  foreach ($palavras as $palavra) {\n    $palavraInvertida = strrev($palavra);\n    $palavrasInvertidas[] = $palavraInvertida;\n  }\n  $fraseInvertida = implode(' ', $palavrasInvertidas);\n  return $fraseInvertida;\n}\necho invertePalavras('O rato roeu a roupa do rei de Roma.');"
+  },
+  {
+    "id": 74,
+    "title": "Exemplo 57",
+    "code": "<?php\nclass Pessoa {\n  private $nome;\n  private $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  public function getNome() {\n    return $this->nome;\n  }\n  public function getIdade() {\n    return $this->idade;\n  }\n}\n\nclass PessoaFisica extends Pessoa {\n  private $cpf;\n  public function __construct($nome, $idade, $cpf) {\n    parent::__construct($nome, $idade);\n    $this->cpf = $cpf;\n  }\n  public function getCpf() {\n    return $this->cpf;\n  }\n}\n\n$pessoaFisica = new PessoaFisica('João', 25, '123.456.789-10');\necho 'O nome da pessoa é ' . $pessoaFisica->getNome() . ', a idade é ' . $pessoaFisica->getIdade() . ' e o CPF é ' . $pessoaFisica->getCpf() . '.';"
+  },
+  {
+    "id": 75,
+    "title": "Exemplo 58",
+    "code": "<?php\nfunction contaPalavras($texto) {\n  $palavras = str_word_count($texto);\n  return $palavras;\n}\n\necho contaPalavras('O rato roeu a"
+  },
+  [
+  {
+    "id": 76,
+    "title": "Manipulação de Arquivos",
+    "code": "<?php\n$file = 'arquivo.txt';\n$content = 'Conteúdo do arquivo.';\n\n// Escrevendo no arquivo\nfile_put_contents($file, $content);\n\n// Lendo o arquivo\n$data = file_get_contents($file);\necho $data;\n\n// Verificando se o arquivo existe\nif (file_exists($file)) {\n  echo 'O arquivo existe.';\n}\n\n// Deletando o arquivo\nunlink($file);"
+  },
+  {
+    "id": 77,
+    "title": "Ordenação de Arrays",
+    "code": "<?php\n$frutas = ['maçã', 'banana', 'laranja', 'uva'];\n\n// Ordenando em ordem alfabética\nsort($frutas);\nprint_r($frutas);\n\n// Ordenando em ordem inversa\nrsort($frutas);\nprint_r($frutas);\n\n// Ordenando por chave\nksort($frutas);\nprint_r($frutas);\n\n// Ordenando por valor\nasort($frutas);\nprint_r($frutas);"
+  },
+  {
+    "id": 78,
+    "title": "Manipulação de Imagens",
+    "code": "<?php\n// Carregando a imagem\n$image = imagecreatefromjpeg('imagem.jpg');\n\n// Obtendo as dimensões da imagem\n$width = imagesx($image);\n$height = imagesy($image);\n\n// Criando uma nova imagem com o dobro da largura\n$newWidth = $width * 2;\n$newHeight = $height;\n$newImage = imagecreatetruecolor($newWidth, $newHeight);\n\n// Copiando a imagem original para a nova imagem\nimagecopy($newImage, $image, 0, 0, 0, 0, $width, $height);\nimagecopy($newImage, $image, $width, 0, 0, 0, $width, $height);\n\n// Salvando a nova imagem\nimagejpeg($newImage, 'nova_imagem.jpg', 100);"
+  },
+  {
+    "id": 79,
+    "title": "Uso de Exceptions",
+    "code": "<?php\nclass MinhaException extends Exception {}\n\nclass MinhaClasse {\n  public function fazerAlgo() {\n    throw new MinhaException('Ocorreu um erro.');\n  }\n}\n\n$obj = new MinhaClasse();\n\ntry {\n  $obj->fazerAlgo();\n} catch (MinhaException $e) {\n  echo 'Exceção capturada: ' . $e->getMessage();\n}"
+  },
+  {
+    "id": 80,
+    "title": "Uso de Namespaces",
+    "code": "<?php\nnamespace App;\n\nclass MinhaClasse {}\n\n$obj = new MinhaClasse();\n\n// Outra classe em um namespace diferente\nnamespace OutroNamespace;\n\nclass OutraClasse {}\n\n$obj2 = new OutraClasse();"
+  },
+  {
+    "id": 81,
+    "title": "Uso de Traits",
+    "code": "<?php\ntrait MeuTrait {\n  public function fazerAlgo() {\n    echo 'Fazendo algo...';\""
+	},
+	[
+  {
+    "id": 82,
+    "title": "Uso de Interfaces",
+    "code": "<?php\ninterface MinhaInterface {\n  public function fazerAlgo();\n}\n\nclass MinhaClasse implements MinhaInterface {\n  public function fazerAlgo() {\n    echo 'Fazendo algo...';\n  }\n}\n\n$obj = new MinhaClasse();\n$obj->fazerAlgo();"
+  },
+  {
+    "id": 83,
+    "title": "Uso de Traits em Interfaces",
+    "code": "<?php\ninterface MinhaInterface {\n  use MeuTrait;\n}\n\nclass MinhaClasse implements MinhaInterface {}\n\n$obj = new MinhaClasse();\n$obj->fazerAlgo();"
+  },
+  {
+    "id": 84,
+    "title": "Manipulação de Datas",
+    "code": "<?php\n$date = new DateTime();\necho $date->format('Y-m-d H:i:s');\n\necho $date->modify('+1 day')->format('Y-m-d H:i:s');\n\n$date2 = new DateTime('2023-04-03');\necho $date->diff($date2)->format('%R%a days');"
+  },
+  {
+    "id": 85,
+    "title": "Uso de Traits para Mixins",
+    "code": "<?php\ntrait MeuTrait {\n  public function fazerAlgo() {\n    echo 'Fazendo algo...';\n  }\n}\n\n// Classe com Mixin\nabstract class MinhaClasse {\n  use MeuTrait;\n}\n\nclass MinhaSubClasse extends MinhaClasse {}\n\n$obj = new MinhaSubClasse();\n$obj->fazerAlgo();"
+  },
+  {
+    "id": 86,
+    "title": "Uso de Métodos Mágicos",
+    "code": "<?php\nclass MinhaClasse {\n  private $propriedade;\n\n  public function __construct() {\n    $this->propriedade = 42;\n  }\n\n  public function __get($name) {\n    if ($name === 'propriedade') {\n      return $this->propriedade;\n    }\n\n    throw new Exception('Propriedade não encontrada.');\n  }\n}\n\n$obj = new MinhaClasse();\necho $obj->propriedade;"
+  },
+  {
+    "id": 87,
+    "title": "Uso de Traits para Herança Múltipla",
+    "code": "<?php\ntrait MeuTrait1 {\n  public function fazerAlgo() {\n    echo 'Fazendo algo 1...';\n  }\n}\n\ntrait MeuTrait2 {\n  public function fazerAlgo() {\n    echo 'Fazendo algo 2...';\n  }\n}\n\n// Classe com herança múltipla\nabstract class MinhaClasse {\n  use MeuTrait1, MeuTrait2 {\n    MeuTrait1::fazerAlgo insteadof MeuTrait2;\n    MeuTrait2::fazerAlgo as fazerAlgo2;\n  }\n}\n\nclass MinhaSubClasse extends MinhaClasse {}\n\n$obj = new MinhaSubClasse();\n$obj->fazerAlgo();\""
+  },
+  [
+  {
+    "id": 88,
+    "title": "Uso de Exceptions",
+    "code": "<?php\nfunction dividir($a, $b) {\n  if ($b == 0) {\n    throw new Exception('Divisão por zero.');\n  }\n\n  return $a / $b;\n}\n\ntry {\n  $resultado = dividir(10, 0);\n  echo $resultado;\n} catch (Exception $e) {\n  echo 'Erro: ' . $e->getMessage();\n}"
+  },
+  {
+    "id": 89,
+    "title": "Uso de Traits para Adicionar Métodos Estáticos",
+    "code": "<?php\ntrait MeuTrait {\n  public static function fazerAlgo() {\n    echo 'Fazendo algo...';\n  }\n}\n\nclass MinhaClasse {\n  use MeuTrait;\n}\n\nMinhaClasse::fazerAlgo();"
+  },
+  {
+    "id": 90,
+    "title": "Uso de Traits para Adicionar Propriedades",
+    "code": "<?php\ntrait MeuTrait {\n  public $propriedade = 42;\n}\n\nclass MinhaClasse {\n  use MeuTrait;\n}\n\n$obj = new MinhaClasse();\necho $obj->propriedade;"
+  },
+  {
+    "id": 91,
+    "title": "Uso de Namespaces",
+    "code": "<?php\nnamespace MeuNamespace;\n\nclass MinhaClasse {}\n\n$obj = new MinhaClasse();\nvar_dump($obj);"
+  },
+  {
+    "id": 92,
+    "title": "Uso de Namespaces Aninhados",
+    "code": "<?php\nnamespace MeuNamespace;\n\nclass MinhaClasse {}\n\nnamespace MeuNamespace\\SubNamespace;\n\nclass MinhaOutraClasse {}\n\n$obj1 = new MinhaClasse();\n$obj2 = new MinhaOutraClasse();\nvar_dump($obj1);\nvar_dump($obj2);"
+  },
+  {
+    "id": 93,
+    "title": "Uso de Interfaces com Métodos Estáticos",
+    "code": "<?php\ninterface MinhaInterface {\n  public static function fazerAlgo();\n}\n\nclass MinhaClasse implements MinhaInterface {\n  public static function fazerAlgo() {\n    echo 'Fazendo algo...';\n  }\n}\n\nMinhaClasse::fazerAlgo();"
+  },
+  {
+    "id": 94,
+    "title": "Uso de Variáveis de Classe",
+    "code": "<?php\nclass MinhaClasse {\n  public static $contador = 0;\n\n  public function __construct() {\n    self::$contador++;\n  }\n}\n\n$obj1 = new MinhaClasse();\n$obj2 = new MinhaClasse();\n\necho MinhaClasse::$contador;"
+  },
+  {
+    "id": 95,
+    "title": "Uso de Métodos de Classe",
+    "code": "<?php\nclass MinhaClasse {\n  public static function fazerAlgo() {\n    echo 'Fazendo algo...';\n  }\n}\n\nMinhaClasse::fazerAlgo();"
+  },
+  {
+    "id": 96,
+    "title": "Uso de Métodos Finais",
+    "code": "<?php\nclass MinhaClasse {\n  final public function meuMetodo() {\n    echo 'Este é o método final.';\n  }\n}\n\nclass MinhaClasseFilha extends MinhaClasse {\n  public function meuMetodo() {\n    echo 'Este é o método filho.';\n  }\n}\n\n$obj = new MinhaClasseFilha();\n$obj->meuMetodo();"
+  },
+  {
+    "id": 97,
+    "title": "Uso de Métodos Estáticos Finais",
+    "code": "<?php\nclass MinhaClasse {\n  final public static function meuMetodo() {\n    echo 'Este é o método final.';\n  }\n}\n\nclass MinhaClasseFilha extends MinhaClasse {\n  public static function meuMetodo() {\n    echo 'Este é o método filho.';\n  }\n}\n\nMinhaClasseFilha::meuMetodo();"
+  },
+  {
+    "id": 98,
+    "title": "Uso de Métodos Abstratos",
+    "code": "<?php\nabstract class MinhaClasse {\n  abstract public function meuMetodo();\n}\n\nclass MinhaClasseFilha extends MinhaClasse {\n  public function meuMetodo() {\n    echo 'Este é o método filho.';\n  }\n}\n\n$obj = new MinhaClasseFilha();\n$obj->meuMetodo();"
+  },
+  {
+    "id": 99,
+    "title": "Uso de Atributos de Classe",
+    "code": "<?php\nclass MinhaClasse {\n  #[Attribute]\n  public static $atributo = 'Valor do atributo.';\n}\n\necho MinhaClasse::$atributo;"
+  },
+  {
+    "id": 100,
+    "title": "Uso de Argumentos de Atributos",
+    "code": "<?php\n#[Attribute(Attribute::TARGET_CLASS)]\nclass MeuAtributo {\n  public $valor;\n\n  public function __construct($valor) {\n    $this->valor = $valor;\n  }\n}\n\n#[MeuAtributo('Valor do atributo.')]\nclass MinhaClasse {}\n\n$obj = new MinhaClasse();\nvar_dump($obj);"
+  },
+  {
+    "id": 101,
+    "title": "Uso de Constantes de Classe",
+    "code": "<?php\nclass MinhaClasse {\n  const MINHA_CONSTANTE = 'Valor da constante.';\n}\n\necho MinhaClasse::MINHA_CONSTANTE;"
+  },
+  {
+    "id": 102,
+    "title": "Uso de Sobrecarga de Operadores",
+    "code": "<?php\nclass MinhaClasse {\n  public $valor;\n\n  public function __construct($valor) {\n    $this->valor = $valor;\n  }\n\n  public function __toString() {\n    return (string) $this->valor;\n  }\n}\n\n$obj = new MinhaClasse(42);\necho $obj;"
+  }
+]
