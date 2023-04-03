@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplos de código JavaScript</title>
+  <style>
+    h1 {
+      text-size: 32px;
+      color: rgb(37, 150, 190);
+      text-align: center;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px;
+      padding: 10px;
+      width: 500px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      margin: 10px 0;
+      padding: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exemplos de código JavaScript</h1>
+  <div class="cards-container" id="cards-container"></div>
+
+  <script>
+    const examples = [
+      {
+        id: 1,
+        title: "Soma",
+        code: "const a = 2;\nconst b = 3;\nconst sum = a + b;\nconsole.log(sum); // Saída: 5"
+      },
+      {
+        id: 2,
+        title: "Subtração",
+        code: "const a = 5;\nconst b = 3;\nconst sub = a - b;\nconsole.log(sub); // Saída: 2"
+      },
+      {
+        id: 3,
+        title: "Multiplicação",
+        code: "const a = 2;\nconst b = 3;\nconst mult = a * b;\nconsole.log(mult); // Saída: 6"
+      },
+      {
+        id: 4,
+        title: "Divisão",
+        code: "const a = 6;\nconst b = 3;\nconst div = a / b;\nconsole.log(div); // Saída: 2"
+      },
+      {
+        id: 5,
+        title: "Resto da divisão",
+        code: "const a = 7;\nconst b = 3;\nconst resto = a % b;\nconsole.log(resto); // Saída: 1"
+      },
+      {
+        id: 6,
+        title: "Potenciação",
+        code: "const base = 2;\nconst expoente = 3;\nconst pot = Math.pow(base, expoente);\nconsole.log(pot); // Saída: 8"
+      },
+      {
+        id: 7,
+        title: "Raiz quadrada",
+        code: "const num = 16;\nconst raiz = Math.sqrt(num);\nconsole.log(raiz); // Saída: 4"
+      },
+      {
+        id: 8,
+        title: "Função",
+        code: "function soma(a, b) {\n  return a + b;\n}\n\nconsole.log(soma(2, 3)); // Saída: 5"
+      },
+      {
+        id: 9,
+        title: "Arrow function",
+        code: "const soma = (a, b) => {\n  return a + b;\n}\n\nconsole.log(soma(2, 3)); // Saída: 5"
+      },
+      {
+        id: 10,
+        title: "Operador ternário",
+        code: "const a = 5;\nconst b = 3;\nconst maior = a > b ? a : b;\nconsole.log(maior); // Saída: 5"
+      },
+      {
+        id: 11,
+        title: "For loop",
+        code: "for (let i = 1; i <= 5; i++) {\n  console.log(i);\n} // Saída: 1 2 3 4 5"
+      },
+      {
+        id: 12,
+        title: "While loop",
+        code: "let i = 1;\nwhile (i <= 5) {\n  console.log(i);\n  i++;\n} // Saída: 1 2 3 4 5"
+      },
+      {
+        id: 13,
+        title: "Do while loop",
+        code: "let i = 1;\ndo {\n  console.log(i);\n  i++;\n} while (i <= 5); // Saída: 1 2 3 4 5"
+      },
+      {
+        id: 14,
+        title: "Array",
+        code: "const frutas = ['banana', 'maçã', 'uva'];\nconsole.log(frutas[1]); // Saída: maçã"
+      },
+      {
+        id: 15,
+        title: "Objeto",
+        code: "const pessoa = {\n nome: 'João',\n idade: 30,\n profissao: 'Programador'\n};\n\nconsole.log(pessoa.nome); // Saída: João"
+      },
+      {
+        id: 16,
+        title: "Método de objeto",
+        code: "const pessoa = {\n nome: 'João',\n idade: 30,\n profissao: 'Programador',\n apresentacao: function() {\n console.log(Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.profissao}.);\n }\n};\n\npessoa.apresentacao(); // Saída: Olá, meu nome é João, tenho 30 anos e sou Programador."
+      },
+      {
+        id: 17,
+        title: "Condicional if",
+        code: "const idade = 18;\nif (idade >= 18) {\n console.log('Pode entrar na festa.');\n} else {\n console.log('Não pode entrar na festa.');\n} // Saída: Pode entrar na festa."
+      },
+      {
+        id: 18,
+        title: "Condicional switch",
+        code: "const dia = 3;\nswitch (dia) {\n case 1:\n console.log('Domingo');\n break;\n case 2:\n console.log('Segunda-feira');\n break;\n case 3:\n console.log('Terça-feira');\n break;\n default:\n console.log('Dia inválido');\n break;\n} // Saída: Terça-feira"
+      },
+      {
+        id: 19,
+        title: "Operador AND",
+        code: "const a = 5;\nconst b = 3;\nif (a > 0 && b > 0) {\n console.log('Ambos são positivos.');\n} else {\n console.log('Pelo menos um número não é positivo.');\n} // Saída: Ambos são positivos."
+      },
+      {
+        id: 20,
+        title: "Operador OR",
+        code: "const a = 5;\nconst b = -3;\nif (a > 0 || b > 0) {\n console.log('Pelo menos um número é positivo.');\n} else {\n console.log('Nenhum número é positivo.');\n} // Saída: Pelo menos um número é positivo."
+      },
+      {
+        id: 21,
+        title: "Operador NOT",
+        code: "const a = 5;\nif (!(a > 0)) {\n console.log('A é negativo ou zero.');\n} else {\n console.log('A é positivo.');\n} // Saída: A é positivo."
+      },
+      {
+        "id": 22,
+        "title": "Exemplo de atribuição",
+        "code": "let nome = 'João';\nlet idade = 30;\n\n// Atribuindo o valor de 'idade' para 'idadeAtual'\nlet idadeAtual = idade;\n\n// Imprimindo as variáveis na tela\nconsole.log(nome); // 'João'\nconsole.log(idade); // 30\nconsole.log(idadeAtual); // 30\n\n// Atribuindo um novo valor para 'idade'\nidade = 31;\n\n// Imprimindo as variáveis na tela novamente\nconsole.log(idade); // 31\nconsole.log(idadeAtual); // 30 (valor anterior)"
+      },
+      {
+        id: 23,
+        title: "Operador de atribuição composto",
+        code: "let a = 5;\na += 3;\nconsole.log(a); // Saída: 8"
+      },
+      {
+        id: 24,
+        title: "Operador ternário",
+        code: "const idade = 18;\nconst resultado = idade >= 18 ? 'Pode dirigir' : 'Não pode dirigir';\nconsole.log(resultado); // Saída: Pode dirigir"
+      },
+      {
+        id: 25,
+        title: "Operador de coalescência nula",
+        code: "const valor = null;\nconst resultado = valor ?? 'Valor padrão';\nconsole.log(resultado); // Saída: Valor padrão"
+      },
+      {
+        id: 26,
+        title: "Loop for",
+        code: "for (let i = 0; i < 5; i++) {\n console.log(i);\n} // Saída: 0 1 2 3 4"
+      },
+      {
+        id: 27,
+        title: "Loop while",
+        code: "let i = 0;\nwhile (i < 5) {\n console.log(i);\n i++;\n} // Saída: 0 1 2 3 4"
+      },
+      {
+        id: 28,
+        title: "Loop do while",
+        code: "let i = 0;\ndo {\n console.log(i);\n i++;\n} while (i < 5); // Saída: 0 1 2 3 4"
+      },
+      {
+        id: 29,
+        title: "Loop for...in",
+        code: "const pessoa = {\n nome: 'João',\n idade: 30,\n profissao: 'Programador'\n};\n\nfor (const chave in pessoa) {\n console.log(${chave}: ${pessoa[chave]});\n} // Saída: nome: João, idade: 30, profissao: Programador"
+      },
+      {
+        id: 30,
+        title: "Loop for...of",
+        code: "const frutas = ['banana', 'maçã', 'uva'];\n\nfor (const fruta of frutas) {\n console.log(fruta);\n} // Saída: banana maçã uva"
+      },
+      {
+        id: 31,
+        title: "Função sem parâmetros",
+        code: "function saudacao() {\n console.log('Olá, mundo!');\n}\n\nsaudacao(); // Saída: Olá, mundo!"
+      },
+      {
+        id: 32,
+        title: "Função com parâmetros",
+        code: "function soma(a, b) {\n return a + b;\n}\n\nconsole.log(soma(3, 5)); // Saída: 8"
+      },
+      {
+        id: 33,
+        title: "Função com valor padrão",
+        code: "function soma(a, b = 0) {\n return a + b;\n}\n\nconsole.log(soma(3)); // Saída: 3"
+      },
+      {
+        id: 34,
+        title: "Função anônima",
+        code: "const soma = function(a, b) {\n return a + b;\n};\n\nconsole.log(soma(5, 8)); // Saída: 13"
+      },
+      {
+        id: 35,
+        title: "Arrow function",
+        code: "const soma = (a, b) => a + b;\n\nconsole.log(soma(3, 5)); // Saída: 8"
+      },
+      {
+        id: 36,
+        title: "Função callback",
+        code: "function somar(a, b, callback) {\n const resultado = a + b;\n callback(resultado);\n}\n\nsomar(3, 5, function(resultado) {\n console.log(resultado); // Saída: 8\n});"
+      },
+      {
+        id: 37,
+        title: "Método de array forEach",
+        code: "const numeros = [1, 2, 3, 4, 5];\n\nnumeros.forEach(function(numero) {\n console.log(numero);\n}); // Saída: 1 2 3 4 5"
+      },
+      {
+        id: 38,
+        title: "Método de array map",
+        code: "const numeros = [1, 2, 3, 4, 5];\n\nconst numerosDobrados = numeros.map(function(numero) {\n return numero * 2;\n});\n\nconsole.log(numerosDobrados); // Saída: [2, 4, 6, 8, 10]"
+      },
+      {
+        id: 39,
+        title: "Método de array filter",
+        code: "const numeros = [1, 2, 3, 4, 5];\n\nconst numerosPares = numeros.filter(function(numero) {\n return numero % 2 === 0;\n});\n\nconsole.log(numerosPares); // Saída: [2, 4]"
+      },
+      {
+        id: 40,
+        title: "Método de array reduce",
+        code: "const numeros = [1, 2, 3, 4, 5];\n\nconst soma = numeros.reduce(function(acumulador, numero) {\n return acumulador + numero;\n}, 0);\n\nconsole.log(soma); // Saída: 15"
+      },
+      {
+        id: 41,
+        title: "Classe",
+        code: "class Pessoa {\n constructor(nome, idade) {\n this.nome = nome;\n this.idade = idade;\n }\n\n saudar() {\n console.log(Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.);\n }\n}\n\nconst pessoa1 = new Pessoa('João', 30);\npessoa1.saudar(); // Saída: Olá, meu nome é João e tenho 30 anos."
+      },
+      {
+        id: 42,
+        title: "Herança",
+        code: "class Animal {\n constructor(nome) {\n this.nome = nome;\n }\n\n falar() {\n console.log(${this.nome} emite um som.);\n }\n}\n\nclass Cachorro extends Animal {\n falar() {\n console.log(${this.nome} late.);\n }\n}\n\nconst cachorro1 = new Cachorro('Totó');\ncachorro1.falar(); // Saída: Totó late."
+      },
+      {
+        id: 43,
+        title: "Promises",
+        code: "function esperar(segundos) {\n return new Promise(function(resolve) {\n setTimeout(function() {\n resolve();\n }, segundos * 1000);\n });\n}\n\nconsole.log('Início');\nesperar(2).then(function() {\n console.log('Passaram 2 segundos.');\n return esperar(3);\n}).then(function() {\n console.log('Passaram mais 3 segundos.');\n}).then(function() {\n console.log('Fim');\n});"
+      },
+      {
+        id: 44,
+        title: "Async/await",
+        code: "function esperar(segundos) {\n return new Promise(function(resolve) {\n setTimeout(function() {\n resolve();\n }, segundos * 1000);\n });\n}\n\nasync function executar() {\n console.log('Início');\n await esperar(2);\n console.log('Passaram 2 segundos.');\n await esperar(3);\n console.log('Passaram mais 3 segundos.');\n console.log('Fim');\n}\n\nexecutar();"
+      },
+      {
+        id: 45,
+        title: "Fetch API",
+        code: "fetch('https://jsonplaceholder.typicode.com/todos/1')\n .then(response => response.json())\n .then(json => console.log(json));"
+      },
+      {
+        id: 46,
+        title: "Axios",
+        code: "axios.get('https://jsonplaceholder.typicode.com/todos/1')\n .then(response => console.log(response.data));"
+      },
+      {
+        id: 47,
+        title: "Express",
+        code: "const express = require('express');\n\nconst app = express();\n\napp.get('/', function(req, res) {\n res.send('Olá, mundo!');\n});\n\napp.listen(3000, function() {\n console.log('Servidor rodando na porta 3000.');\n});"
+      },
+      {
+        id: 48,
+        title: "MongoDB",
+        code: "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost:27017/teste', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\n\nconst pessoaSchema = new Schema({\n nome: String,\n idade: Number\n});\n\nconst Pessoa = mongoose.model('Pessoa', pessoaSchema);\n\nconst pessoa1 = new Pessoa({ nome: 'João', idade: 30 });\n\npessoa1.save(function(err, pessoa) {\n if (err) return console.error(err);\n console.log(pessoa);\n});"
+      },
+      {
+        id: 49,
+        title: "WebSocket",
+        code: "const WebSocket = require('ws');\n\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', function connection(ws) {\n ws.on('message', function incoming(message) {\n console.log('Recebido: %s', message);\n ws.send(Recebi sua mensagem: ${message});\n });\n\n ws.send('Conexão estabelecida.');\n});"
+      },
+      {
+        id: 50,
+        title: "Express + MongoDB",
+        code: "const express = require('express');\nconst mongoose = require('mongoose');\n\nconst app = express();\n\nmongoose.connect('mongodb://localhost:27017/teste', { useNewUrlParser: true, useUnifiedTopology: true });\n\nconst Schema = mongoose.Schema;\n\nconst pessoaSchema = new Schema({\n nome: String,\n idade: Number\n});\n\nconst Pessoa = mongoose.model('Pessoa', pessoaSchema);\n\napp.get('/pessoas', function(req, res) {\n Pessoa.find(function(err, pessoas) {\n if (err) return console.error(err);\n res.send(pessoas);\n });\n});\n\napp.post('/pessoas', function(req, res) {\n const pessoa = new Pessoa(req.body);\n pessoa.save(function(err, pessoa) {\n if (err) return console.error(err);\n res.send(pessoa);\n });\n});\n\napp.put('/pessoas/:id', function(req, res) {\n Pessoa.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, pessoa) {\n if (err) return console.error(err);\n res.send(pessoa);\n });\n});\n\napp.delete('/pessoas/:id', function(req, res) {\n Pessoa.findByIdAndRemove(req.params.id, function(err, pessoa) {\n if (err) return console.error(err);\n res.send(pessoa);\n });\n});\n\napp.listen(3000, function() {\n console.log('Servidor rodando na porta 3000.');\n});"
+      },
+
+      {
+        id: 51,
+        title: 'Reduce - Agrupando valores de um array',
+        code: "const produtos = [\n  { nome: 'Camiseta', categoria: 'Roupas', preco: 30 },\n  { nome: 'Calça', categoria: 'Roupas', preco: 80 },\n  { nome: 'Tênis', categoria: 'Calçados', preco: 120 },\n  { nome: 'Mochila', categoria: 'Acessórios', preco: 200 }\n];\n\nconst agrupadoPorCategoria = produtos.reduce((acc, produto) => {\n  const categoria = produto.categoria;\n  if (!acc[categoria]) {\n    acc[categoria] = [];\n  }\n  acc[categoria].push(produto);\n  return acc;\n}, {});\nconsole.log(agrupadoPorCategoria);"
+      },
+      {
+        id: 52,
+        title: 'Reduce - Calculando a média de valores de um array',
+        code: "const valores = [10, 20, 30, 40, 50];\n\nconst media = valores.reduce((total, valor, index, arr) => {\n  total += valor;\n  if (index === arr.length - 1) {\n    return total / arr.length;\n  }\n  return total;\n}, 0);\nconsole.log(media);"
+      },
+      {
+        id: 53,
+        title: 'Fetch - Realizando uma requisição GET com fetch',
+        code: "fetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error(error));"
+      },
+      {
+        id: 54,
+        title: 'Fetch - Realizando uma requisição POST com fetch',
+        code: "fetch('https://api.example.com/data', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    nome: 'João',\n    idade: 25\n  })\n})\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error(error));"
+      },
+      {
+        id: 55,
+        title: 'Fetch - Realizando uma requisição PUT com fetch',
+        code: "fetch('https://api.example.com/data/1', {\n  method: 'PUT',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    nome: 'João Silva',\n    idade: 26\n  })\n})\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error(error));"
+      },
+      {
+        id: 56,
+        title: 'Fetch - Realizando uma requisição DELETE com fetch',
+        code: "fetch('https://api.example.com/data/1', {\n  method: 'DELETE'\n})\n  .then(response => console.log(response.status))\n  .catch(error => console.error(error));"
+      },
+      {
+        id: 57,
+        title: 'Novidades do ECMAScript 2021 - Operador de encadeamento opcional',
+        code: "const usuario = {\n  nome: 'João',\n  endereco: {\n    rua: 'Rua A',\n    numero: 123\n  }\n};\n\nconsole.log(usuario?.endereco?.cidade); // undefined"
+      },
+      {
+        id: 58,
+        title: 'Novidades do ECMAScript 2021 - Operador de coalescência nula',
+        code: "const nome = null;\nconsole.log(nome ?? 'Usuário sem nome'); // 'Usuário sem nome'"
+      },
+      {
+        id: 59,
+        title: 'Novidades do ECMAScript 2021 - Atribuição condicional',
+        code: "let nome;\n\n// Se nome não estiver definido, atribui 'João'\nnome ||= 'João';\n\nconsole.log(nome); // 'João'"
+      },
+      {
+        id: 60,
+        title: 'Novidades do ECMAScript 2021 - Encadeamento opcional com operador de chamada',
+        code: "const usuario = {\n  nome: 'João',\n  endereco: {\n    rua: 'Rua A',\n    numero: 123,\n    imprimirEndereco() {\n      console.log(`Endereço: ${this.rua}, ${this.numero}`);\n    }\n  }\n};\n\nusuario.endereco.imprimirEndereco?.();"
+      },
+      {
+        id: 61,
+        title: 'Novidades do ECMAScript 2021 - O método replaceAll()',
+        code: "const texto = 'O rato roeu a roupa do rei de Roma';\nconsole.log(texto.replaceAll('r', 'R')); // 'O Rato Roeu a Roupa do Rei de Roma'"
+      },
+      {
+        id: 62,
+        title: 'Novidades do ECMAScript 2021 - Private fields',
+        code: "class Pessoa {\n  #nome;\n\n  constructor(nome) {\n    this.#nome = nome;\n  }\n\n  getNome() {\n    return this.#nome;\n  }\n}\n\nconst pessoa = new Pessoa('João');\nconsole.log(pessoa.getNome()); // 'João'"
+      },
+      {
+        id: 63,
+        title: 'Novidades do ECMAScript 2021 - Métodos privados',
+        code: "class Pessoa {\n  #nome;\n\n  constructor(nome) {\n    this.#nome = nome;\n  }\n\n  #imprimirNome() {\n    console.log(this.#nome);\n  }\n\n  imprimir() {\n    this.#imprimirNome();\n  }\n}\n\nconst pessoa = new Pessoa('João');\npessoa.imprimir(); // 'João'"
+      },
+    ];
+
+    const cardsContainer = document.getElementById("cards-container");
+
+    examples.forEach(example => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+
+      const title = document.createElement("h2");
+      title.textContent = `${example.id} ${example.title}`;
+
+      const description = document.createElement("p");
+      description.textContent = example.description;
+
+      const code = document.createElement("pre");
+      code.textContent = example.code;
+
+      card.appendChild(title);
+      card.appendChild(description);
+      card.appendChild(code);
+
+      cardsContainer.appendChild(card);
+    });
+
+  </script>
+</body>
+
+</html>
