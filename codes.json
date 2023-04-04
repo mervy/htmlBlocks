@@ -118,8 +118,7 @@
     "id": 24,
     "title": "Exemplo 8",
     "code": "<?php\n$nome = 'Maria';\necho 'Olá, ' . strtoupper($nome);"
-  }
-[
+  },
   {
     "id": 25,
     "title": "Exemplo 1",
@@ -163,7 +162,7 @@
   {
     "id": 33,
     "title": "Exemplo 9",
-    "code":
+    "code": "Not code here"
   },
   {
     "id": 34,
@@ -339,8 +338,7 @@
     "id": 68,
     "title": "Exemplo 58",
     "code": "<?php\nfunction contaPalavras($texto) {\n  $palavras = str_word_count($texto);\n  return $palavras;\n}\n\necho contaPalavras('O rato roeu a"
-
-[
+  },
   {
     "id": 69,
     "title": "Exemplo 100",
@@ -355,8 +353,7 @@
     "id": 71,
     "title": "Exemplo 102",
     "code": "<?php\nabstract class Pessoa {\n  protected $nome;\n  protected $idade;\n  public function __construct($nome, $idade) {\n    $this->nome = $nome;\n    $this->idade = $idade;\n  }\n  abstract public function getDocumento();\n}\n\nclass PessoaFisica extends Pessoa {\n  private $cpf;\n  public function __construct($nome, $idade, $cpf) {\n    parent::__construct($nome, $idade);\n    $this->cpf = $cpf;\n  }\n  public function getDocumento() {\n    return $this->cpf;\n  }\n}\n\nclass PessoaJuridica extends Pessoa {\n  private $cnpj;\n  public function __construct($nome, $idade, $cnpj) {\n    parent::__construct($nome, $idade);\n    $this->cnpj = $cnpj;\n  }\n  public function getDocumento() {\n    return $this->cnpj;\n  }\n}\n\n$pessoaFisica = new PessoaFisica('João', 25, '123.456.789-10');\necho 'O nome da"
-
-[
+  },
   {
     "id": 72,
     "title": "Exemplo 55",
@@ -377,7 +374,6 @@
     "title": "Exemplo 58",
     "code": "<?php\nfunction contaPalavras($texto) {\n  $palavras = str_word_count($texto);\n  return $palavras;\n}\n\necho contaPalavras('O rato roeu a"
   },
-  [
   {
     "id": 76,
     "title": "Manipulação de Arquivos",
@@ -408,7 +404,6 @@
     "title": "Uso de Traits",
     "code": "<?php\ntrait MeuTrait {\n  public function fazerAlgo() {\n    echo 'Fazendo algo...';\""
 	},
-	[
   {
     "id": 82,
     "title": "Uso de Interfaces",
@@ -439,7 +434,6 @@
     "title": "Uso de Traits para Herança Múltipla",
     "code": "<?php\ntrait MeuTrait1 {\n  public function fazerAlgo() {\n    echo 'Fazendo algo 1...';\n  }\n}\n\ntrait MeuTrait2 {\n  public function fazerAlgo() {\n    echo 'Fazendo algo 2...';\n  }\n}\n\n// Classe com herança múltipla\nabstract class MinhaClasse {\n  use MeuTrait1, MeuTrait2 {\n    MeuTrait1::fazerAlgo insteadof MeuTrait2;\n    MeuTrait2::fazerAlgo as fazerAlgo2;\n  }\n}\n\nclass MinhaSubClasse extends MinhaClasse {}\n\n$obj = new MinhaSubClasse();\n$obj->fazerAlgo();\""
   },
-  [
   {
     "id": 88,
     "title": "Uso de Exceptions",
